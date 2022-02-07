@@ -2584,14 +2584,15 @@ int wc_GenerateSeed(OS_Seed* os, byte* output, word32 sz)
 
 #elif defined(NO_DEV_RANDOM)
 
-    #error "you need to write an os specific wc_GenerateSeed() here"
-
-    /*
-    int wc_GenerateSeed(OS_Seed* os, byte* output, word32 sz)
-    {
-        return 0;
-    }
-    */
+        int wc_GenerateSeed(OS_Seed* os, byte* output, word32 sz)
+        {
+            word32 i;
+            (void)os;
+            srand(time(NULL));
+            for (i = 0; i < sz; i++)
+                output[i] = (byte)rand();
+            return 0;
+        }
 
 #else
 
