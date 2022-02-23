@@ -71,7 +71,7 @@ AC_DEFUN([AX_TLS], [
               [#include <stdlib.h>],
               [static  $ax_tls_keyword  int bar;]
             )],
-            [ac_cv_tls=$ax_tls_keyword ; break],
+            [ac_cv_tls=none ; break],
             [ac_cv_tls=none]
           )]
         )
