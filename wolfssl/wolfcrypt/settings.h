@@ -38,6 +38,10 @@
 #include <wolfssl/options.h>
 #endif
 
+
+/* Uncomment next line if using Black Parrot */
+#define Black_Parrot
+
 /* Uncomment next line if using IPHONE */
 /* #define IPHONE */
 
@@ -256,6 +260,10 @@
  * unrolling. */
 
     #define AES_GCM_AESNI_NO_UNROLL
+#endif
+
+#ifdef Black_Parrot
+    #define BENCH_EMBEDDED
 #endif
 
 #ifdef IPHONE

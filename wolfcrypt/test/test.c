@@ -1436,7 +1436,6 @@ initDefaultName();
     int myoptind = 0;
     char* myoptarg = NULL;
 #endif
-
     int main(int argc, char** argv)
 #endif
     {
